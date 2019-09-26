@@ -1,0 +1,23 @@
+---
+title: "class_9_26"
+author: "Jakeschonberger"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(janitor)
+library(gapminder)
+library(tidyverse)
+```
+
+# belgium in 1962
+# GDP X axis
+# Y axis life expect
+
+```{r plot}
+gapminder %>% filter(year == "1962")
+
+gapminder %>% filter(year == "1962") %>% ggplot(aes(x=gdpPercap, y=lifeExp, color = continent))+ geom_point() + facet_grid(~continent)
+```
